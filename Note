@@ -84,6 +84,14 @@ component a new instance of a service is created.
 Again, the best practice for large projects is to keep router array in the separate file, but for the sake
 of the simplicity of this example, we are keeping it inside the forRoot function.
 
+First of all, we are injecting the Router which we use for redirecting the user to other pages in the code.
+In the method handleError(), we are checking for the error’s status code, and based on that we are calling
+the right private method for handling that error. The handle404Error() and handle500Error() functions are
+responsible for populating the errorMessage property. We are going to use this property as a modal error message
+or an error page message. We are going to deal with the handleOtherError() function later, thus the comment inside.
+
+
+
 
 
 
