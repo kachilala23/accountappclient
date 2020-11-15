@@ -1,9 +1,42 @@
 npm install --save bootstrap
 npm install --save @types/bootstrap
+npm install --save jquery
+npm install --save @types/jquery
+npm install --save jqueryui
+npm install --save @types/jqueryui
+
+
+Right after that, let’s import that type definition inside the tsconfig.app.json file:
+
+
+"styles": [
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "./node_modules/jqueryui/jquery-ui.min.css",
+    "src/styles.css"
+  ],
+"scripts": [
+    "./node_modules/jquery/dist/jquery.min.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "./node_modules/jqueryui/jquery-ui.min.js"
+  ],
+
+  "types": [
+    "jquery",
+    "bootstrap",
+    "jqueryui"
+  ]
+
 
 commit as init from here before the next line
 
-Right after that, let’s import that type definition inside the tsconfig.app.json file:
+ng g component home --skipTests
+
+In here we import OnInit interface which defines the function ngOnInit.
+This function will execute any logic inside
+it as soon as the component initializes. Notice the constructor as well.
+
+
+
 
 
 
