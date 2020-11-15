@@ -35,6 +35,11 @@ In here we import OnInit interface which defines the function ngOnInit.
 This function will execute any logic inside
 it as soon as the component initializes. Notice the constructor as well.
 
+When we create more than one module inside the application, we can use the forRoot()
+function provided by the RouterModule, only in the main(root) module. In this project,
+it is the app.module file. In all other modules, we must use the forChild() function.
+The forRoot() function accepts an array of objects as a parameter.
+
 
 
 
