@@ -1,0 +1,9 @@
+npm install --save bootstrap
+npm install --save @types/bootstrap
+
+commit as init from here before the next line
+
+Right after that, let’s import that type definition inside the tsconfig.app.json file:
+
+
+
