@@ -66,6 +66,24 @@ The update function is pretty much the same as the createfunction, except, it se
 
 Lastly, the delete function is a wrapper for the DELETE request which accepts the route like (api/owner/id).
 
+ng g module owner
+
+There are two small differences between this module file and the app module file. The first difference
+is that in the app module file we have an import statement for the BrowserModule, and in the owner
+module file, we have an import statement for the CommonModule. That’s because the BrowserModule is only
+related to the root module in the application.
+
+The second difference is that we don’t have providers array inside the owner module file. That’s because we
+should register all the services in the root module. That way components will inject the same instance of
+the service only once and you can keep the state in your service.
+
+Of course, if you really want to register a service inside any child module, you could just add providers array.
+But, by doing so you cannot keep the state inside your service because every time we create a new instance of that
+component a new instance of a service is created.
+
+Again, the best practice for large projects is to keep router array in the separate file, but for the sake
+of the simplicity of this example, we are keeping it inside the forRoot function.
+
 
 
 
