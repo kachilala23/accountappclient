@@ -40,6 +40,32 @@ function provided by the RouterModule, only in the main(root) module. In this pr
 it is the app.module file. In all other modules, we must use the forChild() function.
 The forRoot() function accepts an array of objects as a parameter.
 
+Services are just classes, which provide us with some business logic relevant to our
+components. These services must be injected into a component using constructor injection.
+Furthermore, our code becomes more maintainable and readable.
+
+The urlAddress property accepts the value of the urlAddress defined in the environment file.
+Angular knows if it is a production or development environment and is going
+to supply us with a valid value of that urlAddress. You can check that in the angular.json file:
+
+Let’s explain repositoryService
+
+First, we are injecting the Angular HttpClient and the environment variable into the constructor.
+Then we are creating functions that are going to wrap our requests. The getData function is a wrapper
+for all GET requests. It accepts the route parameter of type string (api/owner or api/owner/id …)
+and then combines it with the environment variable (localhost or www…). After all of that, we are going
+to have the route like http://localhost:5000/api/owner if it is a development environment, which perfectly
+fits our requirements on the server-side.
+
+The second function, create, is a wrapper for POST requests. It also generates a route, but additionally
+receives a body (an entity which we are creating) and generate headers. For this example, we are just
+creating the Content-Type inside the header. But if we need additional values inside the header, we could
+just add another key-value pair inside the HttpHeaders object.
+
+The update function is pretty much the same as the createfunction, except, it sends the PUT request.
+
+Lastly, the delete function is a wrapper for the DELETE request which accepts the route like (api/owner/id).
+
 
 
 
