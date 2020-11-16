@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { OwnerListComponent } from './owner-list/owner-list.component';
 import { OwnerDetailsComponent } from './owner-details/owner-details.component';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   imports: [

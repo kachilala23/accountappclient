@@ -90,7 +90,12 @@ the right private method for handling that error. The handle404Error() and handl
 responsible for populating the errorMessage property. We are going to use this property as a modal error message
 or an error page message. We are going to deal with the handleOtherError() function later, thus the comment inside.
 
+In the situations where we want to send some content from a parent to a child component, we need to use the @Input
+ decorator in a child component to provide a property binding between those components. Moreover, we could have
+ some events in a child component that reflect its behavior back to a parent component. For that purpose,
+ we are going to use @Output decorator with the EventEmitter.
 
+The @Ouput decorator with the EventEmitter is used to emit an event from a child to a parent component
 
 
 
