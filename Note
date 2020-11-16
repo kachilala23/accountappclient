@@ -97,6 +97,29 @@ In the situations where we want to send some content from a parent to a child co
 
 The @Ouput decorator with the EventEmitter is used to emit an event from a child to a parent component
 
+Now let’s explain this code. In the form tag, we are creating the formGroup with a name ownerForm.
+This form group contains all the controls which we need to validate in our form. Moreover, with the
+(ngSubmit) we are calling a function when a user presses the submit button. As a parameter for that
+function, we are sending the ownerForm’s value which contains all the controls with the data we need
+for the validation.
+There is a formControlName attribute inside every control. That attribute represents the control name
+which we are going to validate inside the ownerForm and it is a mandatory attribute. Furthermore, in
+the <em> tags we are displaying error messages if there are any. Errors will be written on the page only
+if the functions validateControl() and hasError() return true as a result.
+
+The function validateControl() is going to check if the control is invalid and the hasError() function
+is going to check which validation rules we are validating against (required, max length…). Both
+validateControl and hasError functions are our custom functions which we are going to implement in the
+component file. There is also a submit button that is going to be disabled until form becomes valid and
+a cancel button which is going to redirect the user away from the creation form.
+
+Child Modals
+Furthermore, we import our child modal components inside this form to show success and error messages.
+As you might remember from the previous post, the success modal had the @Output decorator named
+redirectOnOk. This @Output decorator is emitting the EventEmmiter and in here we are subscribing
+to it with the event binding and assigning a function to it. The function redirectToOwnerList() is
+going to be executed as soon as the user clicks on the OK button from the success modal window.
+
 
 
 
